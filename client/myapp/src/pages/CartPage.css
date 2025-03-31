@@ -1,0 +1,236 @@
+.cart-page {
+    padding: 40px 0;
+  }
+  
+  .page-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  /* Empty Cart */
+  .empty-cart {
+    text-align: center;
+    padding: 60px 0;
+  }
+  
+  .empty-cart-message {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  
+  .empty-cart p {
+    color: var(--light-text);
+    margin-bottom: 30px;
+  }
+  
+  /* Cart Container */
+  .cart-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+  }
+  
+  /* Cart Items */
+  .cart-items {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+  }
+  
+  .cart-header {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr 0.5fr;
+    padding: 15px 20px;
+    background-color: var(--light-gray);
+    font-weight: 600;
+  }
+  
+  .cart-item {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr 0.5fr;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    align-items: center;
+  }
+  
+  .cart-item:last-child {
+    border-bottom: none;
+  }
+  
+  .cart-item-product {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+  }
+  
+  .cart-item-name {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .cart-item-discount {
+    font-size: 12px;
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  .cart-item-price {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .discounted-price {
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+  
+  .original-price {
+    font-size: 12px;
+    color: var(--light-text);
+    text-decoration: line-through;
+  }
+  
+  .quantity-select {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    width: 60px;
+  }
+  
+  .cart-item-total {
+    font-weight: 600;
+  }
+  
+  .remove-item-btn {
+    background: none;
+    border: none;
+    color: var(--light-text);
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .remove-item-btn:hover {
+    color: var(--error-color);
+  }
+  
+  /* Cart Summary */
+  .cart-summary {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+    height: fit-content;
+  }
+  
+  .summary-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .summary-row.total {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-color);
+  }
+  
+  .summary-divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 15px 0;
+  }
+  
+  .checkout-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+  }
+  
+  .continue-shopping {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .continue-shopping a {
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: var(--transition);
+  }
+  
+  .continue-shopping a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive */
+  @media (max-width: 992px) {
+    .cart-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .cart-summary {
+      order: -1;
+      margin-bottom: 30px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cart-header {
+      display: none;
+    }
+    
+    .cart-item {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+    
+    .cart-item-product {
+      grid-column: 1 / -1;
+    }
+    
+    .cart-item-price,
+    .cart-item-quantity,
+    .cart-item-total {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+    
+    .cart-item-price::before {
+      content: 'Price:';
+      font-weight: 600;
+    }
+    
+    .cart-item-quantity::before {
+      content: 'Quantity:';
+      font-weight: 600;
+    }
+    
+    .cart-item-total::before {
+      content: 'Total:';
+      font-weight: 600;
+    }
+    
+    .cart-item-actions {
+      text-align: right;
+    }
+  }
